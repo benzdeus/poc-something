@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; form-action 'none'; base-uri 'none'; frame-ancestors *">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; form-action 'none'; base-uri 'none'">
   <title>Fictional Login Portal - Security Demonstration</title>
   <style>
     :root {
@@ -151,8 +151,7 @@
       color: white;
       font: inherit;
       font-weight: 800;
-      opacity: .58;
-      cursor: not-allowed;
+      cursor: pointer;
     }
 
     .safety {
@@ -208,7 +207,7 @@
         <label for="password">รหัสผ่านตัวอย่าง</label>
         <input id="password" type="text" value="••••••••••••" disabled>
 
-        <button type="button" disabled>เข้าสู่ระบบ (ปิดใช้งาน)</button>
+        <button id="login-demo" type="button">เข้าสู่ระบบ (สาธิต)</button>
       </form>
 
       <p class="safety">
@@ -217,5 +216,8 @@
       </p>
     </section>
   </main>
+  <script>
+    document.getElementById('login-demo').addEventListener('click', () => alert('Hello'));
+  </script>
 </body>
 </html>
